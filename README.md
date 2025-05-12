@@ -10,7 +10,7 @@ O processo não foi simples. Tivemos muitos aprendizados ao longo do caminho, ma
 
 ## Autores
 ![](https://media.licdn.com/dms/image/v2/D4D22AQE1en7PPnX1FQ/feedshare-shrink_800/B4DZa6MUTHGwAg-/0/1746880517115?e=1749686400&v=beta&t=c_g0YSWy61JVM5uxnjG8MsnrnQAfTu-lDXaPoHr26EE)
-- [Bruno Ferreira do Valle RA:2201707](https://www.linkedin.com/in/bruno-valle-960614230/)
+- [Bruno Ferreira do Valle RA:2201707]()
 - [Deyvid Junior Limachi Alejo RA:2201606]
 - [Fernando Gorgonio da Silva RA:2201745]
 - [Jaqueline Carraco Ribeiro RA:2201896]

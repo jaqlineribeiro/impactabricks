@@ -1,14 +1,25 @@
-# impactabricks
-Projeto de Robotica:
-Este é um projeto que utiliza o Lego EV3 Mindstorm para fazer com que o robô criado solucione o cubo mágico automáticamente
 
-Nome/RA
-Bruno Ferreira do Valle RA:2201707
-Deyvid Junior Limachi Alejo RA:2201606
-Fernando Gorgonio da Silva RA:2201745
-Jaqueline Carraco Ribeiro RA:2201896
-Julia Barbosa de Freitas RA:2200820
-Luiz Ricardo dos Santos RA:1903937
-Rafael Vinicius Silva Basilio RA:2200523
-Victor Fernandes Grau RA:1902608
-Yago Thanus Santos Lima RA:2200839
+# Impactabricks
+
+Durante as aulas de Robótica na Impacta Tecnologia com o professor Gustavo Molina, tivemos a oportunidade de explorar esse universo. Percebemos como a automação está cada vez mais presente em nossas vidas e como tarefas humanas já podem, em alguns casos, ser realizadas por máquinas com altíssimo nível de precisão, chegando perto de passar no famoso Teste de Turing. 
+
+Foi nesse contexto que surgiu a ideia do nosso projeto: um robô que resolve o cubo mágico. Muitos de nós ainda não conseguimos resolver o cubo sozinhos, então por que não criar um robô para isso? Afinal, máquinas estão aqui para nos ajudar a resolver problemas, e cabe a nós, engenheiros e programadores, ensiná-las a fazer isso.
+
+O processo não foi simples. Tivemos muitos aprendizados ao longo do caminho, mas ver nosso robô funcionando, fruto do trabalho em equipe, foi extremamente gratificante. Mais do que um projeto, foi uma experiência de colaboração, criatividade e superação.
+
+
+## Autores
+![](https://media.licdn.com/dms/image/v2/D4D22AQE1en7PPnX1FQ/feedshare-shrink_800/B4DZa6MUTHGwAg-/0/1746880517115?e=1749686400&v=beta&t=c_g0YSWy61JVM5uxnjG8MsnrnQAfTu-lDXaPoHr26EE)
+- [Bruno Ferreira do Valle RA:2201707](https://www.linkedin.com/in/bruno-valle-960614230/)
+- [Deyvid Junior Limachi Alejo RA:2201606]
+- [Fernando Gorgonio da Silva RA:2201745]
+- [Jaqueline Carraco Ribeiro RA:2201896]
+- [Julia Barbosa de Freitas RA:2200820]
+- [Luiz Ricardo dos Santos RA:1903937]
+- [Rafael Vinicius Silva Basilio RA:2200523]
+- [Victor Fernandes Grau RA:1902608]
+- [Yago Thanus Santos Lima RA:2200839]
+## Referência
+
+ - [Instruções](https://mindcuber.com/mindcub3r/mindcub3r.html)
+

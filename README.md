@@ -21,11 +21,11 @@ Video: https://www.youtube.com/shorts/UkKhPtS9vGY
 
 - [Bruno Ferreira do Valle RA:2201707](https://github.com/BruValle)
 - Deyvid Junior Limachi Alejo RA:2201606
-- Fernando Gorgonio da Silva RA:2201745
+- [Fernando Gorgonio da Silva RA:2201745](http://github.com/FernandoGSilvaFaculdade)
 - [Jaqueline Carraco Ribeiro RA:2201896](https://github.com/jaqlineribeiro)
 - Julia Barbosa de Freitas RA:2200820
 - Luiz Ricardo dos Santos RA:1903937
-- Rafael Vinicius Silva Basilio RA:2200523
+- [Rafael Vinicius Silva Basilio RA:2200523](https://github.com/RafaelViniciusdaSilvaBasilio)
 - [Victor Fernandes Grau RA:1902608](https://github.com/Victor-Fernandes-Grau)
 - [Yago Thanus Santos Lima RA:2200839](https://github.com/yhanusleverage)
 

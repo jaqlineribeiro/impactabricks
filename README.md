@@ -10,7 +10,8 @@ Foi nesse contexto que surgiu a ideia do nosso projeto: um robô que resolve o c
 
 O processo não foi simples. Tivemos muitos aprendizados ao longo do caminho, mas ver nosso robô funcionando, fruto do trabalho em equipe, foi extremamente gratificante. Mais do que um projeto, foi uma experiência de colaboração, criatividade e superação.
 
-## Espaço para Foto ##
+## Foto do Projeto ##
+![](https://media.licdn.com/dms/image/v2/D4D22AQEYlPp_9Nhmog/feedshare-shrink_1280/B4DZa6MUS7GYAk-/0/1746880514938?e=1750896000&v=beta&t=G4MwCrNA-pAxuPd0sLkwFsGZzeyrXzQlL-gwUuaJONY)
 
 ## Autores
 

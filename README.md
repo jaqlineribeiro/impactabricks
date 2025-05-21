@@ -12,6 +12,7 @@ O processo não foi simples. Tivemos muitos aprendizados ao longo do caminho, ma
 
 ## Foto e video do Projeto ##
 Video: https://www.youtube.com/shorts/UkKhPtS9vGY
+
 ![](https://media.licdn.com/dms/image/v2/D4D22AQEYlPp_9Nhmog/feedshare-shrink_1280/B4DZa6MUS7GYAk-/0/1746880514938?e=1750896000&v=beta&t=G4MwCrNA-pAxuPd0sLkwFsGZzeyrXzQlL-gwUuaJONY)
 
 ## Autores

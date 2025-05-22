@@ -11,7 +11,7 @@ Foi nesse contexto que surgiu a ideia do nosso projeto: um robô que resolve o c
 O processo não foi simples. Tivemos muitos aprendizados ao longo do caminho, mas ver nosso robô funcionando, fruto do trabalho em equipe, foi extremamente gratificante. Mais do que um projeto, foi uma experiência de colaboração, criatividade e superação.
 
 ## Slide apresentação ##
-slide:
+slide: https://docs.google.com/presentation/d/17M7UDsZSQaH2YW7OmAS0dlzRnjP6FaPD/edit?usp=sharing&ouid=115303273796575559706&rtpof=true&sd=true
 
 ## Foto e video do Projeto ##
 Video: https://www.youtube.com/shorts/UkKhPtS9vGY

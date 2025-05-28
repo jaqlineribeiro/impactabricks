@@ -5,7 +5,7 @@ from pybricks.parameters import Port, Direction, Stop, Color, Button
 from pybricks.tools import wait
 
 class RobotController:
-    def __init__(self):
+    def _init_(self):
         self.ev3 = EV3Brick()
         self.ev3.screen.clear()
 
@@ -43,12 +43,6 @@ class RobotController:
             self.ev3.screen.print("Erro Sensor Cor")
         wait(1000)
 
-        try:
-            self.ev3.screen.print("Testando Toque S1")
-            self.touch_sensor = TouchSensor(Port.S1)
-            self.ev3.screen.print("Sensor Toque OK")
-        except:
-            self.ev3.screen.print("Erro Sensor Toque")
         wait(1000)
 
     def reset_posicao(self):
@@ -120,7 +114,7 @@ class RobotController:
         self.ev3.screen.print("Completo S!")
 
     def escanear_cubo(self):
-        """Escaneia as 6 faces do cubo mágico"""
+        """Escaneia as 6 faces do cubo mágico usando RGB"""
         self.ev3.screen.clear()
         self.ev3.screen.print("Escaneando...")
         cores_detectadas = []
@@ -128,13 +122,40 @@ class RobotController:
         for face in range(6):
             self.ev3.screen.print("Face " + str(face+1))
             face_cores = []
+            
             for pos in range(9):  # 3x3 = 9 posições por face
-                cor = self.color_sensor.color()
+                # Lê valores RGB
+                r, g, b = self.color_sensor.rgb()
+                
+                # Identifica a cor usando os mesmos ranges
+                if r < 10 and g < 10 and b < 10:
+                    cor = "Preto"
+                elif (59 <= r <= 62) and (15 <= g <= 19) and (6 <= b <= 10):
+                    cor = "Laranja"
+                elif (42 <= r <= 45) and (10 <= g <= 12) and (6 <= b <= 9):
+                    cor = "Vermelho"
+                elif cor == Color.BLUE:
+                    cor = "Azul"
+                elif cor == Color.GREEN:
+                    cor = "Verde"
+                elif cor == Color.YELLOW:
+                    cor = "Amarelo"
+                elif cor == Color.WHITE:
+                    cor = "Branco"
+                else:
+                    cor = "?"
+                
+                # Mostra no display
+                self.ev3.screen.clear()
+                self.ev3.screen.print("Face " + str(face+1))
+                self.ev3.screen.print("Pos " + str(pos+1))
+                self.ev3.screen.print("R:" + str(r))
+                self.ev3.screen.print("G:" + str(g) + " B:" + str(b))
+                self.ev3.screen.print("Cor: " + cor)
+                
                 face_cores.append(cor)
-                self.ev3.screen.print(str(cor))
                 wait(500)
-                # Mover para próxima posição do cubo
-                # self.motor_sensor.run_angle(100, 30)
+                
             cores_detectadas.append(face_cores)
             self.motor_giro.run_angle(300, 270, then=Stop.HOLD)
             wait(1000)
@@ -145,41 +166,169 @@ class RobotController:
     def executar_movimento(self, mov):
         """Executa um movimento do cubo mágico"""
         if mov == "R":
-            self.motor_vertical.run_angle(160, 90, then=Stop.HOLD)
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
         elif mov == "R'":
-            self.motor_vertical.run_angle(160, -90, then=Stop.HOLD)
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
         elif mov == "U":
-            self.motor_giro.run_angle(300, 90, then=Stop.HOLD)
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
         elif mov == "U'":
-            self.motor_giro.run_angle(300, -90, then=Stop.HOLD)
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
         elif mov == "F":
-            self.motor_sensor.run_angle(100, 90, then=Stop.HOLD)
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+
         elif mov == "F'":
-            self.motor_sensor.run_angle(100, -90, then=Stop.HOLD)
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+        
+        elif mov == "D":
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+
+        elif mov == "D'":
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+
+        elif mov == "B":
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+
+        elif mov == "B'":
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+
+        elif mov == "L":
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+
+
+        elif mov == "L'":
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_horizontal()
+            self.giro_automatico_vertical()
+            self.giro_automatico_horizontal()
         wait(500)
 
     def resolver_cubo(self):
-        """Executa uma sequência fixa como exemplo de resolução"""
         self.ev3.screen.clear()
         self.ev3.screen.print("Resolvendo...")
-        movimentos = ["R", "U", "R'", "U'", "F", "F"]
-        for mov in movimentos:
+        estado_cubo = cores_detectadas
+        url = "https://rubiksolverapi.com/solve"
+        payload = {'state': estado_cubo}
+        response = requests.post(url, data=payload)
+        solution = response.json()
+        for mov in solution:
             self.executar_movimento(mov)
         self.ev3.screen.print("Resolvido!")
 
+    
+    def monitorar_rgb(self):
+        """Monitora valores RGB puros para calibração manual"""
+        self.ev3.screen.clear()
+        self.ev3.screen.print("Monitor RGB")
+        self.ev3.screen.print("Centro = sair")
+        self.ev3.screen.print("Cima = marcar")
+        
+        while True:
+            if Button.CENTER in self.ev3.buttons.pressed():
+                break
+            
+            # Obtém valores RGB e ângulo
+            r, g, b = self.color_sensor.rgb()
+            angulo = self.motor_sensor.angle()
+            
+            # Mostra no display
+            self.ev3.screen.clear()
+            self.ev3.screen.print("Ang: " + str(angulo))
+            self.ev3.screen.print("R: " + str(r))
+            self.ev3.screen.print("G: " + str(g))
+            self.ev3.screen.print("B: " + str(b))
+            
+            # Se pressionar UP, marca os valores
+            if Button.UP in self.ev3.buttons.pressed():
+                self.ev3.screen.clear()
+                self.ev3.screen.print("Valores RGB:")
+                self.ev3.screen.print("R=" + str(r))
+                self.ev3.screen.print("G=" + str(g))
+                self.ev3.screen.print("B=" + str(b))
+                wait(2000)  # Mantém na tela por 2 segundos
+            
+            wait(100)
+        
+        self.ev3.screen.clear()
+        self.ev3.screen.print("Monitoramento")
+        self.ev3.screen.print("finalizado")
+        wait(1000)
+
 def main():
     robot = RobotController()
-    #robot.reset_posicao()
-    # robot.giro_automatico_vertical()
-    # robot.giro_automatico_horizontal()
-    robot.giro_automatico_sensor()
-    
-    # Para teste: escanear cubo
-    # cores = robot.escanear_cubo()
-    # print(cores)  # Para usar via Bluetooth/USB depois
+    robot.reset_posicao()
+    cores = robot.escanear_cubo()
+    robot.resolver_cubo()
+    robot.giro_automatico_horizontal()
+    robot.giro_automatico_horizontal()
+    robot.giro_automatico_horizontal()
+    robot.giro_automatico_horizontal()
+    robot.giro_automatico_horizontal()
 
-    # Resolver usando sequência mock
-    #robot.resolver_cubo()
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
